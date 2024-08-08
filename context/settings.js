@@ -148,4 +148,7 @@ export const APP_ICONS = {
   SEARCH: (
     <Ionicons name={"search-outline"} style={{ color: "#fff", fontSize: 20 }} />
   ),
+  LINE: (
+    <Ionicons name={"remove-outline"} style={{ color: "gray", fontSize: 20 }} />
+  ),
 };

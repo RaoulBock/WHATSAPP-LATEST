@@ -11,6 +11,7 @@ const AppProvider = ({ children }) => {
   const [specData, setSpecData] = React.useState("");
   const [specScreenVisable, setSpecScreenVisable] = React.useState(false);
   const [userDetailVisable, setUserDetailVisable] = React.useState(false);
+  const [chatLockEnable, setChatLockEnable] = React.useState(false);
 
   return (
     <AppContext.Provider
@@ -23,6 +24,8 @@ const AppProvider = ({ children }) => {
         setSpecScreenVisable,
         userDetailVisable,
         setUserDetailVisable,
+        chatLockEnable,
+        setChatLockEnable,
       }}
     >
       {children}
