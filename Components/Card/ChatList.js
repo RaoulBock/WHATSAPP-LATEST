@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     alignItems: "center",
     justifyContent: "space-between",
+    marginRight: 10,
   },
   image: {
     width: 50,

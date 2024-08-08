@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   image: {
-    width: 30,
-    height: 30,
+    width: 50,
+    height: 50,
     borderRadius: 25,
     marginHorizontal: 10,
   },
