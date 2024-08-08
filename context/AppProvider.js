@@ -9,6 +9,8 @@ export const AppContext = React.createContext({
 const AppProvider = ({ children }) => {
   const [navPage, setNavPage] = React.useState(APP_PAGES.APP.HOME);
   const [specData, setSpecData] = React.useState("");
+  const [specScreenVisable, setSpecScreenVisable] = React.useState(false);
+  const [userDetailVisable, setUserDetailVisable] = React.useState(false);
 
   return (
     <AppContext.Provider
@@ -17,6 +19,10 @@ const AppProvider = ({ children }) => {
         setNavPage,
         specData,
         setSpecData,
+        specScreenVisable,
+        setSpecScreenVisable,
+        userDetailVisable,
+        setUserDetailVisable,
       }}
     >
       {children}

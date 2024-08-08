@@ -1,10 +1,22 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { APP_ICONS } from "../../context/settings";
+import { AppContext } from "../../context/AppProvider";
+import Model from "../Model/Model";
+import UserDetails from "../Screen/UserDetails";
 
 const SpecNav = ({ icon, title, iconTwo, style, onPress, onPressTwo, uri }) => {
+  const { userDetailVisable, setUserDetailVisable } =
+    React.useContext(AppContext);
   return (
     <View style={styles.outline}>
+      {userDetailVisable === true && (
+        <Model
+          visible={userDetailVisable}
+          onRequestClose={setUserDetailVisable}
+          children={<UserDetails />}
+        />
+      )}
       <View style={styles.grid}>
         <TouchableOpacity
           activeOpacity={0.8}
@@ -13,7 +25,11 @@ const SpecNav = ({ icon, title, iconTwo, style, onPress, onPressTwo, uri }) => {
         >
           <Text>{icon}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.userInfo} activeOpacity={0.8}>
+        <TouchableOpacity
+          style={styles.userInfo}
+          activeOpacity={0.8}
+          onPress={() => setUserDetailVisable(true)}
+        >
           <Image
             source={{
               uri: uri,

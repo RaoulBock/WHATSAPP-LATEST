@@ -8,23 +8,49 @@ import {
   Dimensions,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import Nav from "../Nav/Nav";
-import { APP_ICONS } from "../../context/settings";
+import { APP_ICONS, APP_PAGES } from "../../context/settings";
 import { AppContext } from "../../context/AppProvider";
 import SpecNav from "../Nav/SpecNav";
 import Input from "../Input/Input";
+import ReceiverCard from "../Card/ReceiverCard";
+import SenderCard from "../Card/SenderCard";
 
 const { height, width } = Dimensions.get("window");
 
 const SpecScreen = () => {
-  const { specData: data } = React.useContext(AppContext);
+  const {
+    specData: data,
+    setNavPage,
+    setSpecScreenVisable,
+  } = React.useContext(AppContext);
+
   return (
     <View style={styles.outline}>
-      {/* <Nav icon={APP_ICONS.BACK} title={data.name} iconTwo={APP_ICONS.SAVE} /> */}
-      <SpecNav icon={APP_ICONS.BACK} title={data.name} uri={data.profile_pic} />
-      <View style={{ flex: 1 }}>
-        <Text>hi</Text>
+      <SpecNav
+        icon={APP_ICONS.BACK}
+        title={data.name}
+        uri={data.profile_pic}
+        onPress={() => {
+          // setNavPage(APP_PAGES.APP.HOME);
+          setSpecScreenVisable(false);
+        }}
+      />
+      <View style={{ flex: 1, justifyContent: "flex-end" }}>
+        <ReceiverCard text={"Hey how are you today?"} time={"12:00 am"} />
+        <SenderCard
+          text={"Im great its been a while, how are you doing?"}
+          time={"12:02 am"}
+          status={APP_ICONS.READ}
+        />
+        <ReceiverCard text={"Its been wild, where you at?"} time={"12:05 am"} />
+        <SenderCard
+          text={"Still in the same place"}
+          time={"14:04 pm"}
+          status={APP_ICONS.SENT}
+        />
       </View>
       <View style={[styles.bottomNav, styles.grid]}>
         <TouchableOpacity
@@ -59,7 +85,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: height,
     backgroundColor: "white",
-    flex: 1,
   },
   bottomNav: {
     marginVertical: 10,

@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 
-const Nav = ({ icon, title, iconTwo, style, onPress, onPressTwo }) => {
+const Nav = ({ icon, title, iconTwo, style, onPress, onPressTwo, uri }) => {
   return (
     <View style={styles.outline}>
       <TouchableOpacity
@@ -11,7 +11,8 @@ const Nav = ({ icon, title, iconTwo, style, onPress, onPressTwo }) => {
       >
         <Text>{icon}</Text>
       </TouchableOpacity>
-      <Text style={[styles.navText, style]}>{title}</Text>
+      {title && <Text style={[styles.navText, style]}>{title}</Text>}
+
       <View>
         <TouchableOpacity
           activeOpacity={0.8}
@@ -43,6 +44,11 @@ const styles = StyleSheet.create({
   navText: {
     color: "#1d1d1d",
     fontWeight: "500",
+  },
+  image: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
   },
 });
 
