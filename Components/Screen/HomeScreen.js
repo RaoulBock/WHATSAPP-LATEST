@@ -6,12 +6,14 @@ import {
   useWindowDimensions,
   Platform,
   StatusBar,
+  TouchableOpacity,
 } from "react-native";
 import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import { Ionicons, FontAwesome5 } from "react-native-vector-icons";
 import ChatScreen from "./ChatScreen";
 import StatusScreen from "./StatusScreen";
 import CallScreen from "./CallScreen";
+import { APP_ICONS } from "../../context/settings";
 
 // Define the components for each tab
 const ChatsRoute = () => <ChatScreen />;
@@ -48,8 +50,20 @@ const HomeScreen = () => {
   ]);
   return (
     <View style={styles.outline}>
-      <View style={styles.nav}>
+      <View style={[styles.nav, styles.grid]}>
         <Text style={styles.navText}>WhatsApp</Text>
+
+        <View style={styles.gridOptions}>
+          <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
+            <Text>{APP_ICONS.CAMERA}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
+            <Text>{APP_ICONS.SEARCH}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
+            <Text>{APP_ICONS.DOTS}</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       <TabView
         navigationState={{ index, routes }}
@@ -70,10 +84,20 @@ const styles = StyleSheet.create({
   nav: {
     padding: 10,
   },
+  grid: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  gridOptions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
   navText: {
     color: "#1d1d1d",
     fontWeight: "600",
-    fontSize: 16,
+    fontSize: 26,
   },
   tabBar: {
     backgroundColor: "white", // Tab bar background color
@@ -83,6 +107,14 @@ const styles = StyleSheet.create({
   },
   indicator: {
     backgroundColor: "black", // Scroller/indicator color
+  },
+  btn: {
+    backgroundColor: "#242424",
+    padding: 8,
+    borderRadius: 50,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 

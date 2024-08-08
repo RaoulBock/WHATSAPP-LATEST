@@ -3,12 +3,12 @@ import { StyleSheet, Text, TextInput, View, Dimensions } from "react-native";
 
 const { width } = Dimensions.get("window");
 
-const Input = ({ placeholder, onChange }) => {
+const Input = ({ placeholder, onChangeText, style }) => {
   return (
-    <View style={styles.outline}>
+    <View style={[styles.outline, style]}>
       <TextInput
         placeholder={placeholder}
-        onChange={onChange}
+        onChangeText={onChangeText}
         style={styles.input}
       />
     </View>

@@ -9,6 +9,7 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Animated,
 } from "react-native";
 import Nav from "../Nav/Nav";
 import { APP_ICONS, APP_PAGES } from "../../context/settings";
@@ -26,6 +27,24 @@ const SpecScreen = () => {
     setNavPage,
     setSpecScreenVisable,
   } = React.useContext(AppContext);
+
+  const [userInput, setUserInput] = React.useState("");
+  const inputWidth = React.useRef(new Animated.Value(width)).current;
+  const iconOpacity = React.useRef(new Animated.Value(1)).current;
+
+  React.useEffect(() => {
+    Animated.timing(inputWidth, {
+      toValue: userInput.length > 0 ? 300 : 100,
+      duration: width,
+      useNativeDriver: false,
+    }).start();
+
+    Animated.timing(iconOpacity, {
+      toValue: userInput.length > 0 ? 0 : 1,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  }, [userInput]);
 
   return (
     <View style={styles.outline}>
@@ -53,28 +72,49 @@ const SpecScreen = () => {
         />
       </View>
       <View style={[styles.bottomNav, styles.grid]}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={[styles.btn, { marginLeft: 6 }]}
-        >
-          <Text>{APP_ICONS.IMJIE}</Text>
-        </TouchableOpacity>
-        <Input placeholder={"Type here"} />
-        <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
-          <Text>{APP_ICONS.DOC}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={[styles.btn, { marginHorizontal: 6 }]}
-        >
-          <Text>{APP_ICONS.CAMERA}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={[styles.btn, { marginRight: 10 }]}
-        >
-          <Text>{APP_ICONS.MIC}</Text>
-        </TouchableOpacity>
+        <View style={styles.smallGrid}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={[styles.btn, { marginLeft: 6 }]}
+          >
+            <Text>{APP_ICONS.IMJIE}</Text>
+          </TouchableOpacity>
+          <Animated.View style={{ width: inputWidth }}>
+            <Input
+              placeholder={"Type here"}
+              onChangeText={(e) => setUserInput(e)}
+            />
+          </Animated.View>
+        </View>
+
+        {userInput.length > 0 ? (
+          <>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={[styles.btn, { marginRight: 10 }]}
+            >
+              <Text>{APP_ICONS.CHEVRON_FORWARD}</Text>
+            </TouchableOpacity>
+          </>
+        ) : (
+          <Animated.View style={{ flexDirection: "row", opacity: iconOpacity }}>
+            <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
+              <Text>{APP_ICONS.DOC}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={[styles.btn, { marginHorizontal: 6 }]}
+            >
+              <Text>{APP_ICONS.CAMERA}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={[styles.btn, { marginRight: 10 }]}
+            >
+              <Text>{APP_ICONS.MIC}</Text>
+            </TouchableOpacity>
+          </Animated.View>
+        )}
       </View>
     </View>
   );
@@ -99,6 +139,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   grid: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  smallGrid: {
     flexDirection: "row",
     alignItems: "center",
   },

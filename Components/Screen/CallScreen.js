@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import { APP_ICONS, data } from "../../context/settings";
+import { APP_ICONS, data, MESSAGE_LIST_DATA } from "../../context/settings";
 
 const CallScreen = () => {
   return (
@@ -25,20 +25,19 @@ const CallScreen = () => {
 
         <View style={styles.callCotainer}>
           <Text style={styles.title}>Recent</Text>
-          {data.map((e, i) => {
-            const hasImages = e.images.length > 0;
-            const imageUrl = hasImages ? e.images[0].url : "";
-
+          {MESSAGE_LIST_DATA.map((e, i) => {
             return (
-              <View style={[styles.grid, { justifyContent: "space-between" }]}>
+              <View
+                style={[styles.grid, { justifyContent: "space-between" }]}
+                key={i}
+              >
                 <TouchableOpacity
-                  key={i}
                   style={[styles.grid, { marginVertical: 6 }]}
                   activeOpacity={0.8}
                 >
                   <View>
                     <Image
-                      source={{ uri: imageUrl }}
+                      source={{ uri: e.profile_pic }}
                       style={[styles.image, {}]}
                     />
                   </View>

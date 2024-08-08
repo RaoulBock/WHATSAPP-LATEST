@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   name: {
     fontWeight: "500",
     color: "#1d1d1d",
+    fontSize: 16,
   },
   lastMessage: {
     color: "gray",

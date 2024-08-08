@@ -3,7 +3,7 @@ import { Ionicons, FontAwesome5 } from "react-native-vector-icons";
 export const MESSAGE_LIST_DATA = [
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-vector/young-man-casual-clothes-vector-illustration-flat-style_101266-35037.jpg",
     name: "John Doe",
     message: "Hello, how are you?",
     time_sent: "2024-08-07T10:00:00Z",
@@ -11,7 +11,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-vector/picture-girl-man-with-backpack_844724-9972.jpg?size=338&ext=jpg",
     name: "Jane Smith",
     message: "Good morning!",
     time_sent: "2024-08-07T10:15:00Z",
@@ -19,7 +19,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-vector/best-friends-couple-vector-illustration_614983-4365.jpg",
     name: "Alice Johnson",
     message: "Meeting at 3 PM.",
     time_sent: "2024-08-07T10:30:00Z",
@@ -27,7 +27,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-vector/portrait-smiling-cute-college-girl-jeans-watercolor-style-illustration-happy-after-class_1036966-112.jpg",
     name: "Bob Brown",
     message: "Can you send me the report?",
     time_sent: "2024-08-07T10:45:00Z",
@@ -35,7 +35,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-vector/exclusive-discount-custom-printed-posters_1253148-36145.jpg",
     name: "Charlie Davis",
     message: "Let's grab lunch.",
     time_sent: "2024-08-07T11:00:00Z",
@@ -43,7 +43,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-vector/girl-with-curly-hair-is-wearing-pair-sunglasses_1025830-98095.jpg",
     name: "Diana Evans",
     message: "Don't forget the meeting.",
     time_sent: "2024-08-07T11:15:00Z",
@@ -51,7 +51,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-photo/vector-illustration-about-art-people_975572-11690.jpg",
     name: "Ethan Green",
     message: "How was your weekend?",
     time_sent: "2024-08-07T11:30:00Z",
@@ -59,7 +59,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-photo/vector-illustration-about-art-people_975572-12231.jpg",
     name: "Fiona Harris",
     message: "See you at 2 PM.",
     time_sent: "2024-08-07T11:45:00Z",
@@ -67,7 +67,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://i.pinimg.com/736x/59/78/3d/59783d264cf9cdb4997585866ba1c940.jpg",
     name: "George Ivanov",
     message: "Can you call me later?",
     time_sent: "2024-08-07T12:00:00Z",
@@ -75,7 +75,7 @@ export const MESSAGE_LIST_DATA = [
   },
   {
     profile_pic:
-      "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+      "https://img.freepik.com/premium-vector/vector-illustration-vlogger-flat-design-style_844724-4344.jpg",
     name: "Hannah Jones",
     message: "Please review the attached document.",
     time_sent: "2024-08-07T12:15:00Z",
@@ -164,6 +164,18 @@ export const APP_ICONS = {
     <Ionicons
       name={"trending-down-outline"}
       style={{ color: "red", fontSize: 16 }}
+    />
+  ),
+  ARCHIVE: (
+    <Ionicons
+      name={"file-tray-outline"}
+      style={{ color: "gray", fontSize: 20 }}
+    />
+  ),
+  CHEVRON_FORWARD: (
+    <Ionicons
+      name={"chevron-forward-outline"}
+      style={{ color: "#fff", fontSize: 20 }}
     />
   ),
 };
