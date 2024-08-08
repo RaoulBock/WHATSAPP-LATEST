@@ -11,17 +11,14 @@ import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import { Ionicons, FontAwesome5 } from "react-native-vector-icons";
 import ChatScreen from "./ChatScreen";
 import StatusScreen from "./StatusScreen";
+import CallScreen from "./CallScreen";
 
 // Define the components for each tab
 const ChatsRoute = () => <ChatScreen />;
 
 const StatusRoute = () => <StatusScreen />;
 
-const CallsRoute = () => (
-  <View>
-    <Text>Calls</Text>
-  </View>
-);
+const CallsRoute = () => <CallScreen />;
 
 // Map the routes to the corresponding components
 const renderScene = SceneMap({

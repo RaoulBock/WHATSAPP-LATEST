@@ -151,4 +151,138 @@ export const APP_ICONS = {
   LINE: (
     <Ionicons name={"remove-outline"} style={{ color: "gray", fontSize: 20 }} />
   ),
+  HEART: (
+    <Ionicons name={"heart-outline"} style={{ color: "gray", fontSize: 20 }} />
+  ),
+  TRENDING_UP: (
+    <Ionicons
+      name={"trending-up-outline"}
+      style={{ color: "green", fontSize: 16 }}
+    />
+  ),
+  TRENDING_DOWN: (
+    <Ionicons
+      name={"trending-down-outline"}
+      style={{ color: "red", fontSize: 16 }}
+    />
+  ),
 };
+
+export const data = [
+  {
+    name: "Manual Evans",
+    images: [
+      {
+        url: "https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys-thumbnail.jpg",
+        timeStamp: "12:00",
+      },
+    ],
+  },
+  {
+    name: "Jessica Adams",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/1164183/pexels-photo-1164183.jpeg",
+        timeStamp: "12:15",
+      },
+    ],
+  },
+  {
+    name: "Michael Johnson",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg",
+        timeStamp: "12:30",
+      },
+    ],
+  },
+  {
+    name: "Sarah Brown",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/1128062/pexels-photo-1128062.jpeg",
+        timeStamp: "12:45",
+      },
+    ],
+  },
+  {
+    name: "David Wilson",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg",
+        timeStamp: "13:00",
+      },
+    ],
+  },
+  {
+    name: "Emily Davis",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg",
+        timeStamp: "13:15",
+      },
+    ],
+  },
+  {
+    name: "Daniel Garcia",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/1166558/pexels-photo-1166558.jpeg",
+        timeStamp: "13:30",
+      },
+    ],
+  },
+  {
+    name: "Olivia Martinez",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/3584005/pexels-photo-3584005.jpeg",
+        timeStamp: "13:45",
+      },
+    ],
+  },
+  {
+    name: "James Lee",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/1646734/pexels-photo-1646734.jpeg",
+        timeStamp: "14:00",
+      },
+    ],
+  },
+  {
+    name: "Sophia Anderson",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/1170971/pexels-photo-1170971.jpeg",
+        timeStamp: "14:15",
+      },
+    ],
+  },
+  {
+    name: "William Taylor",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/3658036/pexels-photo-3658036.jpeg",
+        timeStamp: "14:30",
+      },
+    ],
+  },
+  {
+    name: "Ava Thomas",
+    images: [
+      {
+        url: "https://images.pexels.com/photos/3729173/pexels-photo-3729173.jpeg",
+        timeStamp: "14:45",
+      },
+      {
+        url: "https://images.pexels.com/photos/3729173/pexels-photo-3729173.jpeg",
+        timeStamp: "14:45",
+      },
+      {
+        url: "https://images.pexels.com/photos/3729173/pexels-photo-3729173.jpeg",
+        timeStamp: "14:45",
+      },
+    ],
+  },
+];
